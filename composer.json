@@ -1,5 +1,5 @@
 {
-    "name": "vivify-ideas/acl",
+    "name": "a2design-inc/laravel4-acl",
     "type": "library",
     "description": "ACL component for Laravel 4",
     "keywords": ["acl","laravel"],
