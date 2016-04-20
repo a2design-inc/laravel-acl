@@ -213,4 +213,13 @@ abstract class PermissionsProviderAbstract
      */
     public abstract function getUserRoles($userId);
 
+    /**
+     * Assign specific user role
+     *
+     * @param $userId
+     * @param $roleId
+     *
+     * @return mixed
+     */
+    public abstract function assignUserRole($userId, $roleId);
 }

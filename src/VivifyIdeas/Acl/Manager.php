@@ -516,4 +516,15 @@ class Manager
     {
         return $this->provider->getUserRoles($userId);
     }
+
+    /**
+     * @param integer $userId
+     * @param string $roleId
+     * 
+     * @return array
+     */
+    public function assignUserRole($userId, $roleId) {
+
+        return $this->provider->assignUserRole($userId, $roleId);
+    }
 }

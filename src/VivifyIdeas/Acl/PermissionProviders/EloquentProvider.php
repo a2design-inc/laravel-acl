@@ -292,4 +292,14 @@ class EloquentProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
         return UserRole::where('user_id', $userId)->lists('role_id');
     }
 
+    /**
+     * @see parent description
+     */
+    public function assignUserRole($userId, $roleId) {
+
+        return UserRole::create(array(
+            'user_id' => $userId,
+            'role_id' => $roleId,
+        ))->toArray();
+    }
 }
