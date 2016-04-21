@@ -302,4 +302,16 @@ class EloquentProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
             'role_id' => $roleId,
         ))->toArray();
     }
+
+    /**
+     * @see parent description
+     */
+    public function excludeId($id, $roleId, $permissionId) {
+
+        $rolePermission = RolePermission::where('role_id', $roleId)->where('permission_id', $permissionId)->get();
+
+        $rolePermission->excluded_ids = implode(',', array_merge(explode(',', $rolePermission->excluded_ids), $id));
+        
+        return $rolePermission->save()->toArray();
+    }
 }

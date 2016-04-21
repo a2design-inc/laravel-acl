@@ -527,4 +527,16 @@ class Manager
 
         return $this->provider->assignUserRole($userId, $roleId);
     }
+
+    /**
+     * @param integer|string $id
+     * @param string $roleId
+     * @param string $permissionId
+     * 
+     * @return array
+     */
+    public function excludeId($id, $roleId, $permissionId) {
+
+        return $this->provider->excludeId($id, $roleId, $permissionId);
+    }
 }

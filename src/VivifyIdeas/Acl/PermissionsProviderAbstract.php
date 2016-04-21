@@ -222,4 +222,14 @@ abstract class PermissionsProviderAbstract
      * @return mixed
      */
     public abstract function assignUserRole($userId, $roleId);
+
+    /**
+     * Exclude resource id from role permission
+     * 
+     * @param $id
+     * @param $roleId
+     * @param $permissionId
+     * @return mixed
+     */
+    public abstract function excludeId($id, $roleId, $permissionId);
 }
