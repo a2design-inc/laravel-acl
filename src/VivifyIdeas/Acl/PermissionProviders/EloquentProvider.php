@@ -202,6 +202,14 @@ class EloquentProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
     /**
      * @see parent description
      */
+    public function deleteAllUsersRoles() {
+        
+        UserRole::truncate();
+    }
+
+    /**
+     * @see parent description
+     */
     public function getGroups()
     {
         $groups = Group::all()->toArray();

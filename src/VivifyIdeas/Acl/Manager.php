@@ -294,6 +294,14 @@ class Manager
     {
         return $this->provider->deleteAllUsersPermissions();
     }
+    
+    /**
+     * Delete all users roles
+     */
+    public function deleteAllUsersRoles()
+    {
+        return $this->provider->deleteAllUsersRoles();
+    }
 
     /**
      * Create new system permission

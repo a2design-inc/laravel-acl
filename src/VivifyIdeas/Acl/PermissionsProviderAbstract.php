@@ -94,6 +94,11 @@ abstract class PermissionsProviderAbstract
     public abstract function deleteAllUsersPermissions();
 
     /**
+     * Delete all users roles
+     */
+    public abstract function deleteAllUsersRoles();
+
+    /**
      * Crate new system permission
      *
      * @param string $id
