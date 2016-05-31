@@ -92,6 +92,11 @@ abstract class PermissionsProviderAbstract
      * Delete all user permissions
      */
     public abstract function deleteAllUsersPermissions();
+    
+    /**
+     * Delete all roles permissions
+     */
+    public abstract function deleteAllRolesPermissions();
 
     /**
      * Delete all users roles
@@ -129,6 +134,19 @@ abstract class PermissionsProviderAbstract
      */
     public abstract function assignPermission(
         $userId, $permissionId, $allowed = null, array $allowedIds = null, array $excludedIds = null
+    );
+    
+    /**
+     * Assign permission to the user with specfic options
+     *
+     * @param integer $roleId
+     * @param string $permissionId
+     * @param boolean $allowed
+     * @param array $allowedIds
+     * @param array $excludedIds
+     */
+    public abstract function assignRolePermission(
+        $roleId, $permissionId, $allowed = null, array $allowedIds = null, array $excludedIds = null
     );
 
     /**

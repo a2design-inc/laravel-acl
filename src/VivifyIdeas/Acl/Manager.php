@@ -288,6 +288,14 @@ class Manager
     }
 
     /**
+     * Delete all roles permissions
+     */
+    public function deleteAllRolesPermissions() {
+        
+        return $this->provider->deleteAllRolesPermissions();
+    }
+
+    /**
      * Delete all users permissions
      */
     public function deleteAllUsersPermissions()
@@ -534,6 +542,20 @@ class Manager
     public function assignUserRole($userId, $roleId) {
 
         return $this->provider->assignUserRole($userId, $roleId);
+    }
+
+    /**
+     * @param $roleId
+     * @param $permissionId
+     * @param null $allowed
+     * @param array|null $allowedIds
+     * @param array|null $excludedIds
+     *
+     * @return array
+     */
+    public function assignRolePermission($roleId, $permissionId, $allowed = null, array $allowedIds = null, array $excludedIds = null) {
+
+        return $this->provider->assignRolePermission($roleId, $permissionId, $allowed, $allowedIds, $excludedIds);
     }
 
     /**

@@ -149,6 +149,21 @@ class EloquentProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
     /**
      * @see parent description
      */
+    public function assignRolePermission(
+        $roleId, $permissionId, $allowed = null, array $allowedIds = null, array $excludedIds = null
+    ) {
+        return RolePermission::create(array(
+            'permission_id' => $permissionId,
+            'role_id' => $roleId,
+            'allowed' => $allowed,
+            'allowed_ids' => (!empty($allowedIds))? implode(',', $allowedIds) : null,
+            'excluded_ids' => (!empty($excludedIds))? implode(',', $excludedIds) : null,
+        ))->toArray();
+    }
+
+    /**
+     * @see parent description
+     */
     public function removeUserPermission($userId, $permissionId)
     {
         $q = UserPermission::where('permission_id', '=', $permissionId);
@@ -205,6 +220,14 @@ class EloquentProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
     public function deleteAllUsersRoles() {
         
         UserRole::truncate();
+    }
+
+    /**
+     * @see parent description
+     */
+    public function deleteAllRolesPermissions() {
+
+        RolePermission::truncate();
     }
 
     /**
