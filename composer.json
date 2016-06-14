@@ -21,8 +21,8 @@
         "illuminate/support": "4.*"
     },
     "autoload": {
-        "psr-0": {
-            "VivifyIdeas\\Acl": "src/"
+        "psr-4": {
+            "VivifyIdeas\\Acl\\": "src"
         }
     },
     "minimum-stability": "dev"
