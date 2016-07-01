@@ -171,6 +171,32 @@ class TestProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
 
     }
 
+    public function deleteAllRolesPermissions()
+    {
+
+    }
+
+
+    public function deleteAllUsersRoles()
+    {
+
+    }
+
+    public function assignRolePermission($roleId, $permissionId, $allowed = null, array $allowedIds = null, array $excludedIds = null)
+    {
+
+    }
+
+    public function assignUserRole($userId, $roleId)
+    {
+
+    }
+
+    public function excludeId($id, $roleId, $permissionId)
+    {
+
+    }
+
     public function getGroups()
     {
         return array(
