@@ -569,4 +569,16 @@ class Manager
 
         return $this->provider->excludeId($id, $roleId, $permissionId);
     }
+
+    /**
+     * @param integer|string $id
+     * @param string $userId
+     * @param string $permissionId
+     *
+     * @return array
+     */
+    public function userPermissionAllowedPush($id, $userId, $permissionId) {
+
+        return $this->provider->userPermissionAllowedPush($id, $userId, $permissionId);
+    }
 }

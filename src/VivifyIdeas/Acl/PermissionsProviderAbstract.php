@@ -248,11 +248,21 @@ abstract class PermissionsProviderAbstract
 
     /**
      * Exclude resource id from role permission
-     * 
+     *
      * @param $id
      * @param $roleId
      * @param $permissionId
      * @return mixed
      */
     public abstract function excludeId($id, $roleId, $permissionId);
+
+    /**
+     * include resource id to user permission
+     *
+     * @param $id
+     * @param $userId
+     * @param $permissionId
+     * @return mixed
+     */
+    public abstract function userPermissionAllowedPush($id, $userId, $permissionId);
 }

@@ -345,4 +345,20 @@ class EloquentProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
         
         return $rolePermission->save()->toArray();
     }
+
+    /**
+     * @see parent description
+     */
+    public function userPermissionAllowedPush($id, $userId, $permissionId) {
+        
+        if (!is_array($id)) {
+            $id = [$id];
+        }
+
+        $userPermission = UserPermission::where('user_id', $userId)->where('permission_id', $permissionId)->get();
+
+        $userPermission->allowed_ids = implode(',', array_merge(explode(',', $userPermission->allowed_ids), $id));
+
+        return $userPermission->save()->toArray();
+    }
 }
