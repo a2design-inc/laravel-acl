@@ -10,3 +10,7 @@ before_script:
   - php composer.phar install --dev
 
 script: phpunit
+
+addons:
+    code_climate:
+        repo_token: 7b54f1312bfb8955757f70816f39209273ce1c91eb251b8fb7cac6ed16d38fe0
