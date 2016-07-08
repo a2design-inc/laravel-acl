@@ -355,10 +355,10 @@ class EloquentProvider extends \VivifyIdeas\Acl\PermissionsProviderAbstract
             $id = [$id];
         }
 
-        $userPermission = UserPermission::where('user_id', $userId)->where('permission_id', $permissionId)->get();
+        $userPermission = UserPermission::where('user_id', $userId)->where('permission_id', $permissionId)->first();
 
         $userPermission->allowed_ids = implode(',', array_merge(explode(',', $userPermission->allowed_ids), $id));
 
-        return $userPermission->save()->toArray();
+        return $userPermission->save();
     }
 }
