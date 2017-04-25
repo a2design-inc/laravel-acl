@@ -105,8 +105,8 @@ class InstallCommand extends Command
 				$table->string('permission_id')->index();
 				$table->integer('user_id')->index();
 				$table->boolean('allowed')->nullable();
-				$table->string('allowed_ids')->nullable();
-				$table->string('excluded_ids')->nullable();
+				$table->text('allowed_ids')->nullable();
+				$table->text('excluded_ids')->nullable();
 			});
 		}
 
@@ -125,8 +125,8 @@ class InstallCommand extends Command
 		        $table->string('permission_id')->index();
 		        $table->string('role_id')->index();
 		        $table->boolean('allowed')->nullable();
-		        $table->string('allowed_ids')->nullable();
-		        $table->string('excluded_ids')->nullable();
+		        $table->text('allowed_ids')->nullable();
+		        $table->text('excluded_ids')->nullable();
 		    });
 		}
 
